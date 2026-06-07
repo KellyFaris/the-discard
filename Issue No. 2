@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Discard — Issue No. 2 | Bloom Studios</title>
+<meta name="description" content="The Charleston Issue — The Discard newsletter by Bloom Studios. Strategy, community, and the occasional confession.">
+<meta property="og:title" content="The Discard — Issue No. 2 | Bloom Studios">
+<meta property="og:description" content="The Charleston Issue. A newsletter for people who think about mahjong more than they probably should.">
+<meta property="og:type" content="article">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #7a9e87;
+    --sage-light: #c2d8c8;
+    --sage-pale: #eef4f0;
+    --peach: #e8a98a;
+    --peach-light: #f5d5c0;
+    --cream: #faf7f2;
+    --ink: #2c2c2c;
+    --ink-soft: #5a5a5a;
+    --ink-lighter: #8a8a8a;
+    --rule: #ddd8d0;
+    --bloom-accent: #c17b5c;
+    --terracotta: #b5694a;
+    --warm-white: #fdf9f4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #d9d4cc;
+    font-family: 'Lora', Georgia, serif;
+    color: var(--ink);
+  }
+
+  /* NAV */
+  .site-nav {
+    background: white;
+    border-bottom: 1px solid var(--rule);
+    padding: 0.9rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .site-nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+  }
+
+  .site-nav-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .site-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .site-nav-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  .nav-subscribe-btn {
+    background: var(--sage) !important;
+    color: white !important;
+    padding: 0.45rem 1.1rem !important;
+  }
+
+  /* ISSUE BANNER */
+  .issue-banner {
+    background: var(--sage-pale);
+    border-bottom: 1px solid var(--sage-light);
+    padding: 0.6rem 2rem;
+    text-align: center;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--sage);
+  }
+
+  .issue-banner a { color: var(--sage); text-decoration: underline; }
+
+  /* PAGE WRAP */
+  .page-wrap { padding: 2.5rem 1rem 5rem; }
+
+  .paper {
+    max-width: 680px;
+    margin: 0 auto;
+    background: var(--cream);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.14), 0 1px 4px rgba(0,0,0,0.08);
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--terracotta) !important;
+    padding: 3rem 3rem 3.5rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+  }
+
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 30px,
+      rgba(255,255,255,0.03) 30px,
+      rgba(255,255,255,0.03) 60px
+    );
+  }
+
+  .header-inner { position: relative; z-index: 1; }
+
+  .issue-label {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.65rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.25em !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,0.6) !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .masthead {
+    font-family: 'Playfair Display', serif !important;
+    font-size: clamp(3rem, 8vw, 4.5rem) !important;
+    font-weight: 700 !important;
+    color: var(--warm-white) !important;
+    line-height: 0.95 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .masthead em { font-style: italic !important; color: var(--peach-light) !important; }
+
+  .issue-theme {
+    display: inline-block !important;
+    margin-top: 1.2rem !important;
+    padding: 0.4rem 1rem !important;
+    background: rgba(255,255,255,0.15) !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.7rem !important;
+    letter-spacing: 0.15em !important;
+    text-transform: uppercase !important;
+    color: rgba(255,255,255,0.9) !important;
+  }
+
+  .tagline {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.72rem !important;
+    font-weight: 300 !important;
+    color: rgba(255,255,255,0.55) !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    margin-top: 0.8rem !important;
+  }
+
+  /* TICKER */
+  .ticker {
+    background: var(--ink) !important;
+    padding: 0.9rem 3rem !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.68rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    color: var(--sage-light) !important;
+  }
+
+  .ticker-label { opacity: 0.6; margin-bottom: 0.5rem; }
+
+  .ticker-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .ticker-list li { display: flex; align-items: center; gap: 0.6rem; }
+
+  .ticker-list li::before {
+    content: '';
+    display: inline-block;
+    width: 5px; height: 5px;
+    background: var(--peach);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* BODY */
+  .body { padding: 0 3rem; }
+
+  .scene { padding: 2.5rem 0; border-bottom: 1px solid var(--rule); }
+
+  .scene-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1.2rem;
+  }
+
+  .scene p { font-size: 1.05rem; line-height: 1.82; color: var(--ink); }
+  .scene p + p { margin-top: 1rem; }
+  .scene p em { font-style: italic; color: var(--terracotta); }
+
+  .scene p:first-of-type::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 700;
+    float: left;
+    line-height: 0.8;
+    margin-right: 0.12em;
+    margin-top: 0.1em;
+    color: var(--terracotta);
+  }
+
+  .section { padding: 2.5rem 0; border-bottom: 1px solid var(--rule); }
+  .section:last-child { border-bottom: none; }
+
+  .section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 1.5rem; }
+
+  .section-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-style: italic;
+    color: var(--ink);
+  }
+
+  .section-tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ink-lighter);
+  }
+
+  .section p { font-size: 0.97rem; line-height: 1.85; color: var(--ink-soft); }
+  .section p + p { margin-top: 1rem; }
+  .section strong { color: var(--ink); font-weight: 500; }
+
+  /* CHARLESTON STEPS */
+  .charleston-steps { margin: 1.8rem 0; display: flex; flex-direction: column; gap: 1rem; }
+
+  .c-step { display: grid; grid-template-columns: 3rem 1fr; gap: 1rem; align-items: start; }
+
+  .c-num {
+    width: 3rem; height: 3rem;
+    background: var(--terracotta) !important;
+    color: white !important;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-style: italic;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .c-content h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 0.4rem;
+  }
+
+  .c-content p { font-size: 0.9rem !important; line-height: 1.7 !important; color: var(--ink-soft) !important; }
+
+  /* TIP BOX */
+  .tip-box { margin: 1.8rem 0; background: var(--ink) !important; padding: 1.8rem 2rem; }
+
+  .tip-box-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.6rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--peach) !important;
+    margin-bottom: 0.8rem;
+  }
+
+  .tip-box p { font-size: 0.95rem; line-height: 1.75; color: var(--sage-light) !important; }
+  .tip-box strong { color: var(--peach) !important; }
+
+  /* LETTER */
+  .letter {
+    background: var(--warm-white) !important;
+    border: 1px solid var(--rule) !important;
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
+
+  .letter::before {
+    content: 'Dear New Player,';
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--terracotta);
+    margin-bottom: 1rem;
+  }
+
+  .letter p { font-size: 0.95rem !important; line-height: 1.82 !important; color: var(--ink-soft) !important; }
+  .letter p + p { margin-top: 0.8rem; }
+  .letter p em { font-style: italic; color: var(--terracotta); }
+
+  .letter-sign {
+    margin-top: 1.2rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--ink-lighter);
+  }
+
+  /* PULLQUOTE */
+  .pullquote { margin: 1.8rem 0; padding: 1.5rem 2rem; background: var(--sage-pale) !important; border-left: 3px solid var(--sage) !important; }
+
+  .pullquote p { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-style: italic; line-height: 1.6; color: var(--ink) !important; }
+
+  .pullquote cite {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-top: 0.75rem;
+    font-style: normal;
+  }
+
+  /* CONFESSION */
+  .confession { background: var(--peach-light) !important; padding: 2rem; margin: 1.5rem 0; position: relative; }
+
+  .confession::before {
+    content: '"';
+    font-family: 'Playfair Display', serif;
+    font-size: 6rem;
+    color: var(--peach);
+    position: absolute;
+    top: -0.5rem; left: 1.2rem;
+    line-height: 1;
+    opacity: 0.5;
+  }
+
+  .confession p { font-size: 0.97rem !important; line-height: 1.8 !important; color: var(--ink) !important; padding-left: 1rem; }
+
+  .confession cite {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--bloom-accent);
+    margin-top: 0.75rem;
+    padding-left: 1rem;
+    font-style: normal;
+  }
+
+  /* BLOOM PLUG */
+  .bloom-plug {
+    background: linear-gradient(135deg, var(--sage) 0%, #5a8068 100%) !important;
+    padding: 2rem 2.5rem !important;
+    margin: 2rem -3rem !important;
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 2rem !important;
+  }
+
+  .bloom-plug-icon { font-size: 2.5rem; flex-shrink: 0; }
+
+  .bloom-plug-text h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-style: italic;
+    color: white !important;
+    margin-bottom: 0.4rem;
+  }
+
+  .bloom-plug-text p { font-family: 'DM Sans', sans-serif; font-size: 0.8rem; color: var(--sage-light) !important; line-height: 1.5; }
+  .bloom-plug-text p strong { color: var(--peach-light) !important; }
+
+  hr.ornament { border: none; text-align: center; margin: 1.5rem 0; color: var(--terracotta); font-size: 1rem; letter-spacing: 0.5em; }
+  hr.ornament::after { content: '✦  ✦  ✦'; }
+
+  /* SHARE BAR */
+  .share-bar {
+    background: var(--sage-pale) !important;
+    border-top: 1px solid var(--sage-light) !important;
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+
+  .share-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.62rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-lighter);
+  }
+
+  .share-links { display: flex; gap: 0.75rem; }
+
+  .share-links a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-decoration: none;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid var(--sage-light);
+    background: white !important;
+  }
+
+  /* SUBSCRIBE */
+  .subscribe-block { background: var(--ink) !important; padding: 2.5rem 3rem; text-align: center; }
+
+  .subscribe-block h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: white !important; margin-bottom: 0.6rem; }
+
+  .subscribe-block p { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; color: rgba(255,255,255,0.5) !important; letter-spacing: 0.05em; margin-bottom: 1.5rem; line-height: 1.6; }
+
+  .subscribe-note { font-size: 0.62rem !important; color: rgba(255,255,255,0.25) !important; letter-spacing: 0.08em; margin-top: 0.8rem !important; margin-bottom: 0 !important; }
+
+  /* FOOTER */
+  .footer { background: var(--ink) !important; padding: 2rem 3rem; text-align: center; }
+
+  .footer-logo { font-family: 'Playfair Display', serif; font-style: italic; color: var(--sage-light) !important; font-size: 1rem; margin-bottom: 0.8rem; }
+
+  .footer p { font-family: 'DM Sans', sans-serif; font-size: 0.68rem; color: rgba(255,255,255,0.3) !important; letter-spacing: 0.1em; line-height: 2; }
+
+  .footer a { color: var(--sage-light) !important; text-decoration: underline; }
+
+  /* ARCHIVE NAV */
+  .archive-nav {
+    max-width: 680px;
+    margin: 2rem auto 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0.5rem;
+  }
+
+  .archive-nav a {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+
+  .archive-nav .prev { color: var(--sage); }
+
+  @media (max-width: 600px) {
+    .body { padding: 0 1.5rem; }
+    .header { padding: 2rem 1.5rem 2.5rem !important; }
+    .ticker { padding: 0.8rem 1.5rem !important; }
+    .bloom-plug { margin: 2rem -1.5rem !important; flex-direction: column !important; gap: 1rem !important; }
+    .footer { padding: 2rem 1.5rem !important; }
+    .share-bar { padding: 1rem 1.5rem; }
+    .subscribe-block { padding: 2rem 1.5rem; }
+    .site-nav-links a:not(.nav-subscribe-btn) { display: none; }
+    .archive-nav { padding: 0 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="https://www.bloomstudiosco.com" class="site-nav-logo">
+    <span class="site-nav-name">🌸 Bloom Studios</span>
+  </a>
+  <div class="site-nav-links">
+    <a href="https://www.bloomstudiosco.com/local-events">Events</a>
+    <a href="https://www.instagram.com/thebloom.studios">Instagram</a>
+    <a href="https://www.bloomstudiosco.com/subscribe-for-events-news-more" target="_blank" class="nav-subscribe-btn">Subscribe</a>
+  </div>
+</nav>
+
+<!-- ISSUE BANNER -->
+<div class="issue-banner">
+  The Discard · Issue No. 2
+</div>
+
+<div class="page-wrap">
+<div class="paper">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-inner">
+      <div class="issue-label">Issue No. 2 &nbsp;·&nbsp; Summer 2026 &nbsp;·&nbsp; By Bloom Studios</div>
+      <div class="masthead">The<br><em>Discard</em></div>
+      <div class="issue-theme">The Charleston Issue</div>
+      <div class="tagline">For people who think about mahjong more than they probably should</div>
+    </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-label">In this issue</div>
+    <ul class="ticker-list">
+      <li>The Discard Moment</li>
+      <li>Charleston Decoded</li>
+      <li>Dear New Player</li>
+      <li>Ask the Table</li>
+      <li>The Confessional</li>
+    </ul>
+  </div>
+
+  <div class="body">
+
+    <!-- SCENE -->
+    <div class="scene">
+      <div class="scene-label">The Discard Moment</div>
+      <p>The first time someone explained the Charleston to you, you nodded. You understood the words individually. Three left, three across, three right. Blind pass on the third pass, courtesy. That was a lot but you got it. And then you sat down at the table and your brain <em>completely left the building.</em></p>
+      <p>You passed three tiles you desperately needed. You received three tiles you couldn't use. You smiled like everything was fine. The game hadn't even started and you were already sweating.</p>
+      <p>The Charleston is where new players lose their confidence and experienced players lose their manners. This issue is for both of you.</p>
+    </div>
+
+    <!-- CHARLESTON DECODED -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-name">Charleston Decoded</div>
+        <div class="section-tag">Strategy · All Levels</div>
+      </div>
+      <p>Let's cut through the noise. The Charleston isn't just a formality — <strong>it's the most strategic part of the game</strong>, and most players treat it like a nuisance. Here's how to think about it.</p>
+
+      <div class="charleston-steps">
+        <div class="c-step">
+          <div class="c-num">1</div>
+          <div class="c-content">
+            <h4>Know your hand before you pass</h4>
+            <p>You have 13 tiles and a card (or 14 tiles and a card if you are East). Before the first pass, spend 60 seconds actually looking. Don't sort out of habit — sort with intention. What category are you strongest in? What are you already missing two of? This thinking should shape every pass.</p>
+          </div>
+        </div>
+        <div class="c-step">
+          <div class="c-num">2</div>
+          <div class="c-content">
+            <h4>Pass away, not toward</h4>
+            <p>New players pass tiles they don't want. Experienced players pass tiles that actively help what they're building. Those are different things. Three craks you can't use? Fine to pass. Three craks that would complete a run you're not chasing? Even better.</p>
+          </div>
+        </div>
+        <div class="c-step">
+          <div class="c-num">3</div>
+          <div class="c-content">
+            <h4>The blind pass</h4>
+            <p>You can blind pass on your third pass. This means that if your hand is so good that you do not wish to pass three tiles, you can. Only on this third pass. To do this, wait for your neighbor to pass you tiles and select tiles from their pass to send to your neighbor. You can't look — that's why it is called a blind pass. Use this strategically. Not out of panic. Usually, you have 3 tiles to pass if you look hard enough.</p>
+          </div>
+        </div>
+        <div class="c-step">
+          <div class="c-num">4</div>
+          <div class="c-content">
+            <h4>The courtesy pass</h4>
+            <p>Optional courtesy pass. After the three main passes, the players sitting across from one another can agree to exchange tiles one more time. You may agree to pass 0, 1, 2, or 3 tiles. Whoever can pass the least dictates the pass.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-box">
+        <div class="tip-box-label">🌿 The Charleston Truth Nobody Says Out Loud</div>
+        <p>You will not always build your ideal hand in the Charleston. Sometimes you pass beautifully and receive garbage. Sometimes the opposite. <strong>The goal isn't a perfect hand going into play — it's the best possible hand given what the universe sent you.</strong> Make peace with that and you'll enjoy the game about 40% more immediately.</p>
+      </div>
+    </div>
+
+    <!-- DEAR NEW PLAYER -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-name">Dear New Player</div>
+        <div class="section-tag">You're Not Alone</div>
+      </div>
+      <p>We get a lot of messages from people who are brand new to mahjong and feeling like they're the only one who doesn't fully get it yet. This one's for you.</p>
+
+      <div class="letter">
+        <p>Everyone at that table has felt exactly what you're feeling right now. The woman who seems like she was born knowing the card? She was a nervous beginner once. She passed the wrong tiles. She called a discard she didn't actually need. She forgot which direction to pass in the second Charleston and tried to play it off.</p>
+        <p>The anxiety you feel is not a sign that you're bad at this. It's a sign that you care, and that you're paying attention. Both of those things will make you a better player faster than you think.</p>
+        <p>You're allowed to say "remind me — which way are we passing?" You're allowed to take a breath before you discard. You're allowed to have fun even when your hand is a disaster. <em>Especially</em> when your hand is a disaster.</p>
+        <p>The table wants you there. We promise.</p>
+        <div class="letter-sign">— With love from everyone who's been there</div>
+      </div>
+
+      <p>If you know someone who needs to hear this, forward them this issue. That's what it's here for.</p>
+    </div>
+
+    <!-- ASK THE TABLE -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-name">Ask the Table</div>
+        <div class="section-tag">Reader Questions · Answered</div>
+      </div>
+      <p>Every issue we answer one question from the community — strategy, etiquette, beginner confusion, group dynamics. Nothing is too basic. Nothing is too niche. The table has seen it all.</p>
+
+      <div class="tip-box">
+        <div class="tip-box-label">💬 This Issue's Question</div>
+        <p><strong>"I freeze during the Charleston every single time. By the time I figure out what to pass, everyone is waiting on me. How do I get faster without making mistakes?"</strong></p>
+      </div>
+
+      <p>The freeze is real and almost every player has been there. Here's the thing: the Charleston feels like a decision you have to get exactly right, so your brain stalls trying to optimize. But a decent pass made quickly is almost always better than a perfect pass made slowly.</p>
+      <p>A simple trick that helps: before the game even starts, decide which two categories you will not play this hand. Everything in those categories becomes an automatic pass candidate. You've just cut your decision tree in half before a single tile moves.</p>
+      <p>Speed comes with repetition. The more Charlestons you do — at the table, in practice, just running through scenarios in your head — the faster your pattern recognition kicks in. You're not slow. You're just still building the library.</p>
+      <p style="margin-top:1.5rem; font-style:italic; color:var(--ink-lighter); font-size:0.88rem;">Have a question for the table? <a href="mailto:hello@bloomstudiosco.com" style="color:var(--sage);">Send it here.</a> We read every one.</p>
+    </div>
+
+    <!-- CONFESSIONAL -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-name">The Confessional</div>
+        <div class="section-tag">Anonymous · Reader Submitted</div>
+      </div>
+
+      <div class="confession">
+        <p>I blind passed on my third pass once. On purpose. Very strategically. I had no idea what I was doing. The hand I was protecting was garbage. I won nothing. I have never told anyone this.</p>
+        <cite>— Anonymous, Texas</cite>
+      </div>
+
+      <p>The Confessional is open. <a href="mailto:hello@bloomstudiosco.com" style="color:var(--sage);">Send yours here.</a> All submissions are anonymous and deeply appreciated.</p>
+    </div>
+
+    <!-- PULLQUOTE -->
+    <div class="pullquote">
+      <p>"I have never once finished the Charleston and thought: yes, that went exactly as planned."</p>
+      <cite>— Every mahjong player, ever</cite>
+    </div>
+
+    <!-- APP SECTION -->
+    <div class="bloom-plug">
+      <div class="bloom-plug-icon">🌸</div>
+      <div class="bloom-plug-text">
+        <h4>Practice the Charleston anytime — anywhere</h4>
+        <p>Use your own NMJL card or any card of your choice. Solo practice, tutorials, and more. <strong>$4.99 one-time fee.</strong> No subscription. No data collection. No WiFi needed after your first download.</p>
+        <p style="margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.15);">
+          <span style="display:block; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:0.5rem;">Download the app</span>
+          <a href="http://apps.apple.com/us/app/first-bloom-mahjong-anywhere/id6768630772" style="display:block; color:var(--peach-light); text-decoration:none; font-size:0.82rem; font-weight:500; margin-bottom:0.4rem;">🍎 First Bloom: Mahjong Anywhere — iOS</a>
+          <a href="https://play.google.com/store/apps/details?id=com.bloomstudios.bloommahjongany&pcampaignid=web_share" style="display:block; color:var(--peach-light); text-decoration:none; font-size:0.82rem; font-weight:500;">🤖 Bloom Mahjong Anywhere — Android</a>
+        </p>
+        <p style="margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.15);">
+          <span style="display:block; font-size:0.6rem; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.4); margin-bottom:0.5rem;">Find us</span>
+          <a href="https://www.bloomstudiosco.com/local-events" style="display:block; color:var(--sage-light); text-decoration:none; font-size:0.82rem; font-weight:500; margin-bottom:0.4rem;">📍 Local events near you</a>
+          <a href="https://www.instagram.com/thebloom.studios" style="display:block; color:var(--sage-light); text-decoration:none; font-size:0.82rem; font-weight:500; margin-bottom:0.4rem;">📱 @thebloom.studios on Instagram</a>
+          <a href="https://www.instagram.com/lessonswithallison" style="display:block; color:var(--sage-light); text-decoration:none; font-size:0.82rem; font-weight:500;">📱 @lessonswithallison on Instagram</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="section">
+      <hr class="ornament">
+      <p>Next issue we're getting into the social side of the table — the unwritten rules, the group dynamics, and the one person every game seems to have. You already know who we mean.</p>
+      <p style="margin-top:1rem;">Until then: pass with intention. Receive with grace. And remember that everyone at the table is figuring it out too.</p>
+      <p style="margin-top:1rem; font-family:'DM Sans',sans-serif; font-size:0.8rem; color:var(--ink-lighter);">— The Bloom Studios Team</p>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- SHARE BAR -->
+  <div class="share-bar">
+    <span class="share-label">Share this issue</span>
+    <div class="share-links">
+      <a href="https://www.instagram.com/lessonswithallison" target="_blank">Instagram</a>
+      <a href="#" onclick="navigator.clipboard.writeText('https://kellyfaris.github.io/the-discard/issue-02.html'); this.innerText='Copied!'; setTimeout(() => this.innerText='Copy Link', 2000); return false;">Copy Link</a>
+    </div>
+  </div>
+
+  <!-- SUBSCRIBE -->
+  <div class="subscribe-block" id="subscribe">
+    <h3>Never miss an issue</h3>
+    <p>The Discard lands twice a month. No spam, no fluff — just mahjong, community, and the occasional confession.</p>
+    <a href="https://www.bloomstudiosco.com/subscribe-for-events-news-more" target="_blank" style="display:inline-block; margin-top:0.5rem; padding:0.85rem 2rem; background:#7a9e87; color:white; font-family:'DM Sans',sans-serif; font-size:0.78rem; font-weight:500; letter-spacing:0.15em; text-transform:uppercase; text-decoration:none;">Subscribe Now</a>
+    <p class="subscribe-note">No spam. Unsubscribe anytime. We don't share your info.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-logo">Bloom Studios</div>
+    <p>
+      <a href="https://www.bloomstudiosco.com">bloomstudiosco.com</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.bloomstudiosco.com/local-events">Local Events</a>
+      &nbsp;·&nbsp;
+      <a href="https://www.instagram.com/thebloom.studios">@thebloom.studios</a>
+    </p>
+    <p style="margin-top:0.5rem;">Made with love for the American Mahjong community</p>
+  </div>
+
+</div><!-- /paper -->
+
+<!-- ARCHIVE NAV -->
+<div class="archive-nav">
+  <a href="https://bloom-studios-co-llc.github.io/the-discard/" class="prev">← Issue No. 1</a>
+  <span></span>
+</div>
+
+</div><!-- /page-wrap -->
+</body>
+</html>
